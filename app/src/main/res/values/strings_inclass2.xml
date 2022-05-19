@@ -1,0 +1,21 @@
+<resources>
+    <string name="page_name_edit_profile">Edit Profile Activity</string>
+    <string name="name_hint">Name</string>
+    <string name="email_hint">Email</string>
+    <string name="software_prompt">I use</string>
+    <string name="android">Android</string>
+    <string name="ios">iOS</string>
+    <string name="mood_prompt">Select your current mood: Angry</string>
+    <string name="button_submit">Submit</string>
+
+
+    <string name="page_name_select_avatar">Select Avatar</string>
+    <string name="avatar_prompt">Select your Avatar</string>
+
+    <string name="page_name_display_profile">Display Activity</string>
+    <string name="name_display">Name:</string>
+    <string name="email_display">Email:</string>
+    <string name="software_display_android">I use Android!</string>
+    <string name="software_display_ios">I use iOS!</string>
+
+</resources>
