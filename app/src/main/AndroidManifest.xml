@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CS4520_InClass"
         tools:targetApi="31">
-
+        <activity
+            android:name=".InClass04"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -23,13 +25,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name=".DisplayProfile"
+            android:name=".inclass2.DisplayProfile"
             android:exported="false" />
         <activity
-            android:name=".SelectAvatar"
-            android:exported="false" >
+            android:name=".inclass2.SelectAvatar"
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.example.cs4520_inclass.intent.action.VIEW" />
 
@@ -37,9 +38,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".EditProfile"
+            android:name=".inclass2.EditProfile"
             android:exported="false" />
-
     </application>
 
 </manifest>

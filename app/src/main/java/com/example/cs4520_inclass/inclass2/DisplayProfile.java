@@ -1,10 +1,12 @@
-package com.example.cs4520_inclass;
+package com.example.cs4520_inclass.inclass2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.cs4520_inclass.R;
 
 public class DisplayProfile extends AppCompatActivity implements View.OnClickListener{
 

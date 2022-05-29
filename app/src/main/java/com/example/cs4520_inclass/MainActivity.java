@@ -8,10 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.cs4520_inclass.inclass2.EditProfile;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-    Button inClass1, inClass2;
+    Button inClass1, inClass2, inClass4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +22,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         inClass1 = findViewById(R.id.button_inClass1);
         inClass2 = findViewById(R.id.button_inClass2);
+        inClass4 = findViewById(R.id.button_inClass4);
 
         inClass1.setOnClickListener(this);
         inClass2.setOnClickListener(this);
+        inClass4.setOnClickListener(this);
 
     }
 
@@ -39,6 +43,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (v.getId() == R.id.button_inClass2) {
             Intent toInClass2 = new Intent(MainActivity.this, EditProfile.class);
             startActivity(toInClass2);
+            //Toast.makeText(this, "Invalid Inputs", Toast.LENGTH_LONG).show();
+        }
+
+        if (v.getId() == R.id.button_inClass4) {
+            Intent toInClass4 = new Intent(MainActivity.this, InClass04.class);
+            startActivity(toInClass4);
             //Toast.makeText(this, "Invalid Inputs", Toast.LENGTH_LONG).show();
         }
 

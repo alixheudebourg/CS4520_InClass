@@ -1,4 +1,4 @@
-package com.example.cs4520_inclass;
+package com.example.cs4520_inclass.inclass2;
 
 import android.media.Image;
 

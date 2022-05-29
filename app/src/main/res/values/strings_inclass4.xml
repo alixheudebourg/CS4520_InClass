@@ -1,0 +1,9 @@
+<resources>
+    <string name="page_name">Number Generator</string>
+    <string name="complexity_prompt">Select Complexity:</string>
+    <string name="minimum">Minimum:</string>
+    <string name="maximum">Maximum:</string>
+    <string name="average">Average:</string>
+    <string name="buttonText_generateNum">Generate Number</string>
+
+</resources>

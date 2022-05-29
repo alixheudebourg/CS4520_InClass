@@ -1,4 +1,4 @@
-package com.example.cs4520_inclass;
+package com.example.cs4520_inclass.inclass2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.Toast;
+
+import com.example.cs4520_inclass.R;
 
 public class SelectAvatar extends AppCompatActivity implements View.OnClickListener {
 
