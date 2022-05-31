@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.cs4520_inclass.inClass4.InClass04;
 import com.example.cs4520_inclass.inclass2.EditProfile;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
