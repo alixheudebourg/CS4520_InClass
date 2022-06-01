@@ -1,47 +1,95 @@
 package com.example.cs4520_inclass;
 
 
-import java.util.ArrayList;
+import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
 
 public class Headline {
 
-    private String country;
-    private String category;
-    private ArrayList<String> sources;
-    private String q;
+    private String title;
+    private String author;
+    private String publishedAt;
+    private String description;
+    private String urlToImage;
 
-    public Headline() {
+    public Headline(){
     }
 
-    public String getCountry() {
-        return country;
+    public Headline(String title, String author, String publishedAt, String description, String urlToImage) {
+        this.title = title;
+        this.author = author;
+        this.publishedAt = publishedAt;
+        this.description = description;
+        this.urlToImage = urlToImage;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public String getTitle() {
+        return title;
     }
 
-    public String getCategory() {
-        return category;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public String getAuthor() {
+        return author;
     }
 
-    public ArrayList<String> getSources() {
-        return sources;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
-    public void setSources(ArrayList<String> sources) {
-        this.sources = sources;
+    public String getPublishedAt() {
+        return publishedAt;
     }
 
-    public String getQ() {
-        return q;
+    public void setPublishedAt(String publishedAt) {
+        this.publishedAt = publishedAt;
     }
 
-    public void setQ(String q) {
-        this.q = q;
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getUrlToImage() {
+        return urlToImage;
+    }
+
+    public void setUrlToImage(String urlToImage) {
+        this.urlToImage = urlToImage;
+    }
+
+    @Override
+    public String toString() {
+        return "Headline{" +
+                "title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", publishedAt='" + publishedAt + '\'' +
+                ", description='" + description + '\'' +
+                ", urlToImage='" + urlToImage + '\'' +
+                '}';
+    }
+
+    public String readbleDate(){
+        // get readble date from UTC format
+        // 2022-05-31T18:28:56Z -> May 31st, 2022 at 6:28
+
+        DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter
+                .ofPattern("uuuu-MM-dd'T'HH:mm:ss'Z'");
+
+        //Instance with given offset
+        OffsetDateTime odtInstanceAtOffset = OffsetDateTime.parse(this.publishedAt,
+                DATE_TIME_FORMATTER);
+
+        String dateStringInUTC = odtInstanceAtOffset.format(DATE_TIME_FORMATTER);
+
+        return dateStringInUTC;
     }
 }
+
+

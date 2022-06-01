@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 
@@ -19,9 +21,10 @@ import okhttp3.Response;
 
 public class InClass06 extends AppCompatActivity {
 
+    private TextView textView;
     private final OkHttpClient client = new OkHttpClient();
     private ListView listView;
-    private SearchView searchView;
+    private Spinner spinner;
 
     private String apikey = "f777477991854b12a9a2f60117e85e34";
 
@@ -30,8 +33,17 @@ public class InClass06 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inclass06);
 
-        listView.findViewById(R.id.listView_newsStack);
-        searchView.findViewById(R.id.searchView_searchAttributes);
+        textView = findViewById(R.id.textView_newsTitle);
+        //listView.findViewById(R.id.listView_newsStack);
+        //spinner.findViewById(R.id.spinner_selectParam);
+
+
+        Headline h = new Headline();
+        h.setPublishedAt("2022-05-31T18:25:03Z");
+
+        String test = h.readbleDate();
+        textView.setText(test);
+
 
 
     }
@@ -53,7 +65,7 @@ public class InClass06 extends AppCompatActivity {
                     String body = response.body().string();
                     Gson gsonData = new Gson();
 
-                    gsonData.fromJson(response.body().charStream(),Headline.class);
+                    gsonData.fromJson(response.body().charStream(), Headlines.class);
                 }
 
             }
