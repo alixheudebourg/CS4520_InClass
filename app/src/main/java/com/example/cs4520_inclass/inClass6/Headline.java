@@ -1,20 +1,22 @@
-package com.example.cs4520_inclass;
+package com.example.cs4520_inclass.inClass6;
 
 
-import java.time.OffsetDateTime;
-import java.time.ZoneOffset;
-import java.time.format.DateTimeFormatter;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class Headline {
+/**
+ * TEAM 06
+ *
+ * @author Alix Heudebourg & Winnie Phebus
+ * Assignment 06
+ */
+public class Headline implements Parcelable {
 
     private String title;
     private String author;
     private String publishedAt;
     private String description;
     private String urlToImage;
-
-    public Headline(){
-    }
 
     public Headline(String title, String author, String publishedAt, String description, String urlToImage) {
         this.title = title;
@@ -24,12 +26,28 @@ public class Headline {
         this.urlToImage = urlToImage;
     }
 
-    public String getTitle() {
-        return title;
+    protected Headline(Parcel in) {
+        title = in.readString();
+        author = in.readString();
+        publishedAt = in.readString();
+        description = in.readString();
+        urlToImage = in.readString();
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public static final Creator<Headline> CREATOR = new Creator<Headline>() {
+        @Override
+        public Headline createFromParcel(Parcel in) {
+            return new Headline(in);
+        }
+
+        @Override
+        public Headline[] newArray(int size) {
+            return new Headline[size];
+        }
+    };
+
+    public String getTitle() {
+        return title;
     }
 
     public String getAuthor() {
@@ -44,24 +62,12 @@ public class Headline {
         return publishedAt;
     }
 
-    public void setPublishedAt(String publishedAt) {
-        this.publishedAt = publishedAt;
-    }
-
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public String getUrlToImage() {
         return urlToImage;
-    }
-
-    public void setUrlToImage(String urlToImage) {
-        this.urlToImage = urlToImage;
     }
 
     @Override
@@ -75,20 +81,18 @@ public class Headline {
                 '}';
     }
 
-    public String readbleDate(){
-        // get readble date from UTC format
-        // 2022-05-31T18:28:56Z -> May 31st, 2022 at 6:28
+    @Override
+    public int describeContents() {
+        return 0;
+    }
 
-        DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter
-                .ofPattern("uuuu-MM-dd'T'HH:mm:ss'Z'");
-
-        //Instance with given offset
-        OffsetDateTime odtInstanceAtOffset = OffsetDateTime.parse(this.publishedAt,
-                DATE_TIME_FORMATTER);
-
-        String dateStringInUTC = odtInstanceAtOffset.format(DATE_TIME_FORMATTER);
-
-        return dateStringInUTC;
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(getTitle());
+        dest.writeString(getAuthor());
+        dest.writeString(getPublishedAt());
+        dest.writeString(getDescription());
+        dest.writeString(getUrlToImage());
     }
 }
 

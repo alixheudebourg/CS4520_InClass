@@ -2,6 +2,7 @@ package com.example.cs4520_inclass;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.cs4520_inclass.inClass4.InClass04;
+import com.example.cs4520_inclass.inClass5.InClass05;
+import com.example.cs4520_inclass.inClass6.InClass06;
 import com.example.cs4520_inclass.inclass2.EditProfile;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -69,5 +72,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //Toast.makeText(this, "Invalid Inputs", Toast.LENGTH_LONG).show();
         }
 
+    }
+
+    // code from Winnie for assignment 06
+    public static void showToast(Context contxt, String toastMsg) {
+        Toast.makeText(contxt, toastMsg, Toast.LENGTH_SHORT).show();
     }
 }

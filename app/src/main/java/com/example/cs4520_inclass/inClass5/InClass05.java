@@ -1,4 +1,4 @@
-package com.example.cs4520_inclass;
+package com.example.cs4520_inclass.inClass5;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.cs4520_inclass.R;
 import com.example.cs4520_inclass.inclass2.EditProfile;
 
 public class InClass05 extends AppCompatActivity implements View.OnClickListener {

@@ -13,4 +13,7 @@
     <string name="click_promt">Click on Calculate BMI to get your BMI</string>
     <string name="button_text">Calculate BMI</string>
     <string name="app_title">Body Mass Index (BMI)</string>
+
+    <string name="main_in_class_06">IN CLASS 06</string>
+    <string name="ic06_findnews">Find News</string>
 </resources>

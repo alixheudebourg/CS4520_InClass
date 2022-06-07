@@ -15,10 +15,10 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".InClass06"
+            android:name=".inClass6.InClass06"
             android:exported="false" />
         <activity
-            android:name=".InClass05"
+            android:name=".inClass5.InClass05"
             android:exported="false" />
         <activity
             android:name=".inClass4.InClass04"
