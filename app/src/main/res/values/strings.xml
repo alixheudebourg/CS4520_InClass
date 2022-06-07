@@ -16,4 +16,26 @@
 
     <string name="main_in_class_06">IN CLASS 06</string>
     <string name="ic06_findnews">Find News</string>
+
+
+    <!-- IN CLASS 7 -->
+
+    <string name="ic7_app_name">Notes</string>
+    <string name="ic7_notes_title">All Notes</string>
+    <string name="ic7_profile">My Profile</string>
+    <string name="ic7_notes">My Notes</string>
+    <string name="ic7_new_note">Add Note</string>
+    <string name="ic7_log_out">Log Out</string>
+
+
+    <string name="ic7_log_in">Log In</string>
+    <string name="ic7_email">Email</string>
+    <string name="ic7_password">Password</string>
+    <string name="ic7_register_prompt">Don\'t have an account? Register Here.</string>
+
+    <string name="ic7_register">Register</string>
+    <string name="ic7_reg_name">Name</string>
+    <string name="ic7_login_prompt">Have an account? Login.</string>
+
+
 </resources>
