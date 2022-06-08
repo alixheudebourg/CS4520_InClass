@@ -16,7 +16,7 @@
         app:contentPadding="2dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/ic06_headlineV"
+            android:id="@+id/ic07_noteView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"

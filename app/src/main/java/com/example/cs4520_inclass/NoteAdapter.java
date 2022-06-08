@@ -1,0 +1,99 @@
+package com.example.cs4520_inclass;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+
+public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
+
+    private ArrayList<Note> allNotes;
+    private FragmentActivity fragmentActivity;
+
+    public NoteAdapter(ArrayList<Note> allNotes, FragmentActivity fragmentActivity) {
+        if(fragmentActivity != null) {
+            this.allNotes = allNotes;
+            this.fragmentActivity = fragmentActivity;
+        } else {
+            throw new RuntimeException(fragmentActivity.toString()
+                    + " must be called from a Fragment");
+        }
+    }
+
+    public NoteAdapter(ArrayList<Note> allNotes) {
+        this.allNotes = allNotes;
+    }
+
+    public List<Note> getAllNotes() {
+        return allNotes;
+    }
+
+    public void setAllNotes(ArrayList<Note> allNotes) {
+        this.allNotes = allNotes;
+        this.notifyDataSetChanged();
+    }
+
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+
+        private ConstraintLayout container;
+        private TextView noteDisplay;
+        private Button deleteNote;
+
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            this.container = itemView.findViewById(R.id.ic07_noteView);
+            this.noteDisplay = itemView.findViewById(R.id.ic7_note_text);
+            this.deleteNote = itemView.findViewById(R.id.ic7_deleteNote);
+
+        }
+
+        public ConstraintLayout getContainer() {
+            return container;
+        }
+
+        public TextView getNoteText() {
+            return noteDisplay;
+        }
+
+        public Button getDeleteButton() {
+            return deleteNote;
+        }
+
+    }
+
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.fragment_single_note, parent, false);
+        return new ViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull NoteAdapter.ViewHolder holder, int position) {
+        holder.getNoteText().setText(allNotes.get(position).getNoteText());
+        holder.getDeleteButton().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                allNotes.remove(holder.getAdapterPosition());
+                notifyDataSetChanged();
+
+            }
+        });
+    }
+
+    @Override
+    public int getItemCount() {
+        return allNotes.size();
+    }
+}

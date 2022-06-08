@@ -49,10 +49,18 @@ public class RegisterFragment extends Fragment {
         register = rootview.findViewById(R.id.ic7_reg_button);
         login = rootview.findViewById(R.id.ic7_reg2login);
 
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //super.createAccount()
+                ((LoginActivity)getActivity()).toLoginFragment();
+            }
+        });
+
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((LoginActivity)getActivity()).registerAndLogin();
             }
         });
 

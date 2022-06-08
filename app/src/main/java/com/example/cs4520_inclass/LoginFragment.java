@@ -1,5 +1,6 @@
 package com.example.cs4520_inclass;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.cs4520_inclass.inClass5.InClass05;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -47,6 +50,22 @@ public class LoginFragment extends Fragment {
 
         login = rootview.findViewById(R.id.ic7_login_button);
         register = rootview.findViewById(R.id.ic7_login2register);
+
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((LoginActivity)getActivity()).toRegisterFragment();
+            }
+        });
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((LoginActivity)getActivity()).login();
+            }
+        });
+
+
 
         return  rootview;
     }

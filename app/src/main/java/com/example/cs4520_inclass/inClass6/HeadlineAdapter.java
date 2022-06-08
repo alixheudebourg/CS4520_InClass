@@ -54,7 +54,7 @@ public class HeadlineAdapter extends RecyclerView.Adapter<HeadlineAdapter.ViewHo
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            this.container = itemView.findViewById(R.id.ic06_headlineV);
+            this.container = itemView.findViewById(R.id.ic07_noteView);
             this.titleTV = itemView.findViewById(R.id.ic06_hTitle);
             this.authorTV = itemView.findViewById(R.id.ic06_hAuthor);
             this.publishedAtTV = itemView.findViewById(R.id.ico06_hDate);

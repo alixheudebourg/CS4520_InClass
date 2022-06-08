@@ -25,6 +25,7 @@
     <string name="ic7_profile">My Profile</string>
     <string name="ic7_notes">My Notes</string>
     <string name="ic7_new_note">Add Note</string>
+    <string name="ic7_delete_note">Delete</string>
     <string name="ic7_log_out">Log Out</string>
 
 
@@ -36,6 +37,8 @@
     <string name="ic7_register">Register</string>
     <string name="ic7_reg_name">Name</string>
     <string name="ic7_login_prompt">Have an account? Login.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
