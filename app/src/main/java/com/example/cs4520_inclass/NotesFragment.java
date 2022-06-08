@@ -1,7 +1,9 @@
 package com.example.cs4520_inclass;
 
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -31,6 +33,8 @@ public class NotesFragment extends Fragment {
 
     private ArrayList<Note> allNotes;
 
+    IbuttonActions listener;
+
     public NotesFragment() {
         // Required empty public constructor
     }
@@ -56,6 +60,7 @@ public class NotesFragment extends Fragment {
         addNote = rootView.findViewById(R.id.ic7_home_addNote);
 
 
+
         allNotes = new ArrayList<Note>();
 
         allNotes.add(new Note("note1", "id"));
@@ -75,10 +80,32 @@ public class NotesFragment extends Fragment {
         addNote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity().getParent(), "button pressed", Toast.LENGTH_SHORT).show();
+                Note note = new Note();
+                note.setNoteText(String.valueOf(newNoteInput.getText()));
+                note.setId("id2");
+                allNotes.add(note);
+                noteAdapter.notifyDataSetChanged();
+
+                newNoteInput.setText("");
+                //listener.addButtonClicked(note);
             }
         });
 
         return rootView;
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        if(context instanceof IbuttonActions){
+            listener = (IbuttonActions) context;
+        }else {
+            throw new RuntimeException(context.toString() + " must implement IbuttonActions");
+        }
+    }
+
+    public interface IbuttonActions {
+        void addButtonClicked(Note note);
+        void deleteButtonClicked(Note note);
     }
 }

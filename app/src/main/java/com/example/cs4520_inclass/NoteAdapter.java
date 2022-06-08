@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -45,9 +46,14 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
+        // display/delete notes elements
         private ConstraintLayout container;
         private TextView noteDisplay;
         private Button deleteNote;
+
+        // add note elements
+        private EditText newNote;
+        private Button addNote;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -55,6 +61,8 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
             this.noteDisplay = itemView.findViewById(R.id.ic7_note_text);
             this.deleteNote = itemView.findViewById(R.id.ic7_deleteNote);
 
+            this.newNote = itemView.findViewById(R.id.ic7_home_newNote);
+            this.addNote = itemView.findViewById(R.id.ic7_home_addNote);
         }
 
         public ConstraintLayout getContainer() {
@@ -69,6 +77,13 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
             return deleteNote;
         }
 
+        public EditText getNewNote() {
+            return newNote;
+        }
+
+        public Button getAddNote() {
+            return addNote;
+        }
     }
 
     @NonNull

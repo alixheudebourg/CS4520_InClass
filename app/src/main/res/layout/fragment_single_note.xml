@@ -2,16 +2,18 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout6"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".SingleNoteFragment"
-    android:id="@+id/frameLayout6">
+    android:layout_height="wrap_content"
+    tools:context=".SingleNoteFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
+        android:background="#D6D6D6"
+        app:cardBackgroundColor="#eeeeee"
         app:cardCornerRadius="10dp"
         app:cardElevation="4dp"
         app:contentPadding="2dp"
@@ -35,8 +37,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:layout_marginBottom="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ic7_deleteNote"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:layout_conversion_absoluteHeight="19dp"
@@ -46,7 +50,9 @@
                 android:id="@+id/ic7_deleteNote"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
                 android:text="@string/ic7_delete_note"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

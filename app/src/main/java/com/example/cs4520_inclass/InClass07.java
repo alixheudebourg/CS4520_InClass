@@ -14,10 +14,11 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class InClass07 extends AppCompatActivity implements LifecycleOwner  {
+public class InClass07 extends AppCompatActivity implements NotesFragment.IbuttonActions {
 
     private TextView title;
     private Button button;
+
 
 
 
@@ -84,4 +85,14 @@ public class InClass07 extends AppCompatActivity implements LifecycleOwner  {
         Toast.makeText(this, "Logged Out", Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    public void addButtonClicked(Note note) {
+
+
+    }
+
+    @Override
+    public void deleteButtonClicked(Note note) {
+
+    }
 }
