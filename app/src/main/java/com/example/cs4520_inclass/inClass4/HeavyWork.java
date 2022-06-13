@@ -75,8 +75,10 @@ public class HeavyWork  implements Runnable {
 
         Message progressMessage = new Message();
 
-        ArrayList<Double> list = getArrayNumbers(this.complexity);
+        //ArrayList<Double> list = getArrayNumbers(this.complexity);
 
+        ArrayList<Double> list = new ArrayList<Double>();
+        list = getArrayNumbers(1);
 
         Bundle bundle = new Bundle();
         bundle.putInt("progress_key", 1);

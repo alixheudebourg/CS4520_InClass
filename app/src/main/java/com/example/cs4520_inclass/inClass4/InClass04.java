@@ -95,9 +95,9 @@ public class InClass04 extends AppCompatActivity {
                     case HeavyWork.STATUS_PROGRESS:
 
                         Bundle receivedProgressData = msg.getData();
-                        donePercent += receivedProgressData.getInt("progress key");
-                        //Log.d("TAG", "status progress"+donePercent);
-                        progressBar.setProgress(donePercent);
+                        //donePercent = receivedProgressData.getInt("progress_key");
+                        Log.d("TAG", "status progress"+donePercent);
+                        //progressBar.setProgress(donePercent*100/complexity);
                         break;
                 }
                 return false;
