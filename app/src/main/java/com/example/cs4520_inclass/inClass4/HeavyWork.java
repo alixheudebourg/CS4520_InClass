@@ -73,28 +73,20 @@ public class HeavyWork  implements Runnable {
         startMessage.what = STATUS_START;
         handler.sendMessage(startMessage);
 
-        for(int i=0; i<100; i++){
-            Message progressMessage = new Message();
+        Message progressMessage = new Message();
 
-            getArrayNumbers(this.complexity);
+        ArrayList<Double> list = getArrayNumbers(this.complexity);
 
 
-            Bundle bundle = new Bundle();
-            bundle.putInt("progress_key", i);
-            progressMessage.what = STATUS_PROGRESS;
-            progressMessage.setData(bundle);
-            handler.sendMessage(progressMessage);
-        }
+        Bundle bundle = new Bundle();
+        bundle.putInt("progress_key", 1);
+        progressMessage.what = STATUS_PROGRESS;
+        progressMessage.setData(bundle);
+        handler.sendMessage(progressMessage);
 
-        //
 
         Message endMessage = new Message();
 
-        ArrayList<Double> list = new ArrayList<Double>();
-
-        list.add(3.2);
-        list.add(1.2);
-        list.add(5.2);
 
         Bundle endBundle = new Bundle();
         endBundle.putDouble("max", this.getMax(list));
@@ -103,7 +95,6 @@ public class HeavyWork  implements Runnable {
         endMessage.setData(endBundle);
         endMessage.what = STATUS_FINAL;
         handler.sendMessage(endMessage);
-
 
     }
 }

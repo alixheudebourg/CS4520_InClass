@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -26,6 +27,7 @@ public class InClass04 extends AppCompatActivity {
     private ExecutorService threadPool;
     private Handler handler;
     private int complexity;
+    int donePercent = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,16 +86,16 @@ public class InClass04 extends AppCompatActivity {
                         double max = receivedFinalData.getDouble("max");
                         double min = receivedFinalData.getDouble("min");
                         double avg = receivedFinalData.getDouble("avg");
-
-                        maxDisp.setText((int) max);
-                        minDisp.setText((int) min);
-                        avgDisp.setText((int) avg);
+                        Log.d("demo", "handleMessage: "+max);
+                        maxDisp.setText(String.valueOf(max));
+                        minDisp.setText(String.valueOf(min));
+                        avgDisp.setText(String.valueOf(avg));
                         break;
 
                     case HeavyWork.STATUS_PROGRESS:
 
                         Bundle receivedProgressData = msg.getData();
-                        int donePercent = receivedProgressData.getInt("progress key");
+                        donePercent += receivedProgressData.getInt("progress key");
                         //Log.d("TAG", "status progress"+donePercent);
                         progressBar.setProgress(donePercent);
                         break;
