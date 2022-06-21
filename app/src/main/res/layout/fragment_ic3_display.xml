@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout9"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".inClass3.DisplayFragment" >
+
+    <TextView
+        android:id="@+id/ic03_emailDisp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/email_hint"
+        app:layout_constraintBottom_toBottomOf="@+id/ic03_emailTitle"
+        app:layout_constraintStart_toEndOf="@+id/ic03_emailTitle"
+        app:layout_constraintTop_toTopOf="@+id/ic03_emailTitle" />
+
+    <TextView
+        android:id="@+id/ic03_moodDisp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        android:textColor="#434343"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ic03_OSDisp" />
+
+    <ImageView
+        android:id="@+id/ic03_finalProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/avatar_f_1" />
+
+    <TextView
+        android:id="@+id/ic03_OSDisp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/software_display_android"
+        android:textColor="#434343"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ic03_emailTitle" />
+
+    <TextView
+        android:id="@+id/ic03_nameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="75dp"
+        android:text="@string/name_display"
+        android:textColor="#434343"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ic03_finalProfile" />
+
+    <TextView
+        android:id="@+id/ic03_emailTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/email_display"
+        android:textColor="#434343"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ic03_nameTitle" />
+
+    <ImageView
+        android:id="@+id/ic03_moodEmojii"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ic03_moodDisp"
+        app:srcCompat="@drawable/angry" />
+
+    <TextView
+        android:id="@+id/ic03_nameDisp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/name_hint"
+        app:layout_constraintBottom_toBottomOf="@+id/ic03_nameTitle"
+        app:layout_constraintStart_toEndOf="@+id/ic03_nameTitle"
+        app:layout_constraintTop_toTopOf="@+id/ic03_nameTitle" />
+</androidx.constraintlayout.widget.ConstraintLayout>

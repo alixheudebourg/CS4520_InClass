@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.cs4520_inclass.inClass3.InClass03Activity;
 import com.example.cs4520_inclass.inClass4.InClass04;
 import com.example.cs4520_inclass.inClass5.InClass05;
 import com.example.cs4520_inclass.inClass6.InClass06;
@@ -17,7 +18,7 @@ import com.example.cs4520_inclass.inclass2.EditProfile;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-    Button inClass1, inClass2, inClass4, inClass5, inClass6, inClass7;
+    Button inClass1, inClass2, inClass3, inClass4, inClass5, inClass6, inClass7;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,17 +27,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         inClass1 = findViewById(R.id.button_inClass1);
         inClass2 = findViewById(R.id.button_inClass2);
+        inClass3 = findViewById(R.id.button_inClass3);
         inClass4 = findViewById(R.id.button_inClass4);
         inClass5 = findViewById(R.id.button_inClass5);
         inClass6 = findViewById(R.id.button_inClass6);
-        inClass7 = findViewById(R.id.button_inClass7);
+        //inClass7 = findViewById(R.id.button_inClass7);
 
         inClass1.setOnClickListener(this);
         inClass2.setOnClickListener(this);
+        inClass3.setOnClickListener(this);
         inClass4.setOnClickListener(this);
         inClass5.setOnClickListener(this);
         inClass6.setOnClickListener(this);
-        inClass7.setOnClickListener(this);
+        //inClass7.setOnClickListener(this);
 
     }
 
@@ -52,6 +55,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if (v.getId() == R.id.button_inClass2) {
             Intent toInClass2 = new Intent(MainActivity.this, EditProfile.class);
+            startActivity(toInClass2);
+        }
+
+        if (v.getId() == R.id.button_inClass3) {
+            Intent toInClass2 = new Intent(MainActivity.this, InClass03Activity.class);
             startActivity(toInClass2);
         }
 
@@ -71,8 +79,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (v.getId() == R.id.button_inClass7) {
-            Intent toInClass7 = new Intent(MainActivity.this, LoginActivity.class);
-            startActivity(toInClass7);
+            //Intent toInClass7 = new Intent(MainActivity.this, LoginActivity.class);
+            //startActivity(toInClass7);
         }
 
 

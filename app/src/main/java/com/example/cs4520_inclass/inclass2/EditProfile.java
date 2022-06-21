@@ -34,7 +34,7 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
         selectAvatar = findViewById(R.id.imageButton_selectAvatar);
         submit = findViewById(R.id.button_submit);
         moodImage = findViewById(R.id.imageView_moodDisplay);
-        radioGroup = findViewById(R.id.radioGroup);
+        radioGroup = findViewById(R.id.ic3_radioGroup);
         currentMood = angry;
 
         selectAvatar.setOnClickListener(this);
