@@ -36,8 +36,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="In Class 3"
-        app:layout_constraintTop_toBottomOf="@+id/button_inClass2"
-        tools:layout_editor_absoluteX="147dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_inClass2" />
 
     <Button
         android:id="@+id/button_inClass4"
